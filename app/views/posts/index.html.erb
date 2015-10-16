@@ -33,9 +33,9 @@
 <script type="text/javascript">
 
     function disqus_config() {
-      this.callbacks.onNewComment = [function(comment) { ga('send', 'event', 'disqus', 'new_comment'); 
-        alert(comment.id);
-        console.log(comment.id);
+      this.callbacks.onNewComment = [function(comment) { 
+        console.log(comment.author);
+        ga('send', 'event', 'disqus', 'new_comment'); 
       }];
     }
 
