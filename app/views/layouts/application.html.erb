@@ -6,8 +6,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   
-  <%= render partial: 'shared/analytics' %>
-</head>
+  </head>
 <body>
 
   <!-- <script>
@@ -24,7 +23,7 @@
   <!-- <p class="alert"><%#= alert %></p> -->
 
   <% if user_signed_in? %>
-    
+    <%= render partial: 'shared/analytics' %>
     <script>ga('send', 'event', 'Website Users', 'Sign In')</script>
       
     <script>
