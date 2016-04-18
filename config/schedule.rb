@@ -13,11 +13,13 @@
 #   rake "some:great:rake:task"
 # end
 #
-# every 4.days do
+# every 4.days doT
 #   runner "AnotherModel.prune_old_records"
 # end
 
 # Learn more: http://github.com/javan/whenever
-every 1.minute do
-  rake "cron:ctest"
+set :output, "#{path}/log/cron_log.log"
+
+every [:wednesday, :saturday], :at => '10:00am' do
+  rake "search_reindex"
 end
